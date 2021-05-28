@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+  <link href="/Assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <title>Demo Trade </title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">MyTrades</a>
+
+      <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-target="#navbarSupportedContent"
+        data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>MORE</button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="Navbarnew.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="portfolio.html">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="CurrencyConverter.html">Currency converter</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Trade Demo </a>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="index.html">
+                  <span class="glyphicon glyphicon-user"></span> Sign out</a>
+              </li>
+
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Current Values</h5>
+        <p class="card-text">
+          <h5>Current Value</h5>
+          <h6>USDINR :
+            <span id="usdInr"></span>
+          </h6>
+          <h6>USDEUR :
+            <span id="usdEur"></span>
+          </h6>
+          <h6>dynamic :
+            <span id="us"></span>
+          </h6>
+
+
+
+          <p class="card-text">
+            <small class="text-muted"></small>
+          </p>
+      </div>
+    </div>
+    <div class="card">
+
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text">
+
+          <center>
+            <label>Choose your Lot--</label>
+            <div class="dropdown show">
+              <select class="btn btn-secondary dropdown-toggle" id="lotValue">
+                <option class="dropdown-item" value="micro">micro</option>
+                <option class="dropdown-item" value="mini">mini</option>
+                <option class="dropdown-item" value="standard">Standard</option>
+              </select>
+            </div>
+            <br>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              To know about Lot values
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Number of lots </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    1.(0.01) Micro lot you get 0.01$ per pip ---1000 units
+                  </div>
+                  <div class="modal-body">
+                    2.(0.1) Mini lot you get 0.1$ per pip ----10,000 units</div>
+                  3.(1.0) standard lot you get 1$ per pip ----100,000 units
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Practise Here</h5>
+        <p class="card-text">
+          <h6> BUY AT :
+            <span id="usdInr1"></span>
+          </h6>
+          </center>
+
+          <label> Sell at</label>
+          <input type="number" id="sell">
+          <button type="button" class="btn btn-dark" onclick="exchange()">Sell
+          </button>
+          <br>
+          </br>
+          <label id="exchange">
+
+          </label>
+        </p>
+        </p>
+
+
+      </div>
+    </div>
+  </div>
+
+  <center>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="https://a.c-dn.net/c/content/dam/publicsites/igcom/uk/images/ContentImage/How-to-read-forex-charts-GBPUSD-chart_LRG.png"
+        alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Live chart</h5>
+        <p class="card-text">Here's chart of history data </p>
+        <a href="Chart.html" class="btn btn-primary">Check</a>
+      </div>
+    </div>
+    </br>
+
+
+
+
+  </center>
+  <script>
+    function exchange() {
+      event.preventDefault();
+      let elementarray = JSON.parse(localStorage.getItem("elementarray")) || [];
+      let noValue = document.querySelector("#sell").value;
+      lotNum = document.querySelector("#lotValue").value;
+      if (Trade.exchange(noValue, lotNum) != 0) {
+        returnValue = Trade.exchange(noValue, lotNum);
+        let balance;
+        let balance1;
+        let today = new Date().toISOString().slice(0, 10);
+        document.getElementById("exchange").innerHTML = "Profit or loss " + returnValue + " $  " + " on  " + today;
+
+
+
+        balance1 = parseInt(localStorage.getItem("total")) || [];
+        balance = returnValue + balance1;
+        localStorage.setItem("total", JSON.stringify(balance));
+
+        let returnString = JSON.stringify(returnValue);
+
+        let dollarstring = "$   ON ";
+
+        let element1 = "Profit or Loss    ".concat(returnString).concat(dollarstring).concat(today);
+
+
+        elementarray.push({ element1 });
+        localStorage.setItem("elementarray", JSON.stringify(elementarray));
+      }
+      else
+        document.getElementById("exchange").innerHTML = "Enter amount";
+
+
+
+    }
+
+  </script>
+  <script src="/Assets/js/AjexCall.js"></script>
+  <script src="/Assets/js/balance.js"></script>
+  <script src="/service/CurrencyExchangeService.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+  </script>
+</body>
+
+</html>
