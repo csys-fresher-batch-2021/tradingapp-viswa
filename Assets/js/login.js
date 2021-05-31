@@ -19,7 +19,7 @@ function login() {
     if  (userCheck == true)
         window.location.href = "/Views/Navbarnew.html";
     else
-        alert("login failed");
+        alert("Enter correct username or password");
 }
 function signup() {
     event.preventDefault();
@@ -41,3 +41,20 @@ function signup() {
         document.getElementById("nomatch").innerHTML = "Enter same password ";
 
 }
+function showPassword() {
+    var x = document.getElementById("pass");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  function showRepeatPassword() {
+    var x = document.getElementById("repeatpass");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+

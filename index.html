@@ -1,57 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-   <link rel="stylesheet" href="/Assets/css/font.css"> 
-     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" > -->
-    <title>Document</title>
+
+    <link rel="stylesheet" href="/Assets/css/font.css">
+    <link rel="stylesheet" href="/Assets/css/passValidation.css">
+    <title>loginPage</title>
 </head>
+
 <body>
     <center>
         <div class="row">
-                <div class="col-md-6 mx-auto p-0">
-                    <div class="card">
-                        <div class="login-box">
-                            <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
-                                <label for="tab-1" class="tab">Login</label>
-                                 <input id="tab-2" type="radio" name="tab" class="sign-up">
-                                 <label for="tab-2" class="tab">Sign Up</label>
-                                <div class="login-space">
-                                    <form onsubmit="login()">
+            <div class="col-md-6 mx-auto p-0">
+                <div class="card">
+                    <div class="login-box">
+                        <div class="login-snip">
+                            <input id="tab-1" type="radio" name="tab" class="sign-in" checked>
+                            <label for="tab-1" class="tab">Login</label>
+                            <input id="tab-2" type="radio" name="tab" class="sign-up">
+                            <label for="tab-2" class="tab">Sign Up</label>
+                            <div class="login-space">
+                                <form onsubmit="login()">
                                     <div class="login">
-                                        <div class="group"> <label for="user" class="label">Username</label> 
-                                        <input id="loginuser" type="text" class="input" placeholder="Enter your username" required>
-                                         </div>
-                                        <div class="group"> <label for="pass" class="label">Password</label> 
-                                        <input id="loginpass" type="password" class="input" data-type="password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Enter your password" required>
-                                         </div>
-                                        <div class="group"> <input id="check" type="checkbox" class="check" checked>
-                                         <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
-                                        <div class="group"> <input type="submit"  class="button" value="Sign In"> </div>
+                                        <div class="group">
+                                            <label for="user" class="label">Username</label>
+                                            <input id="loginuser" type="text" class="input" placeholder="Enter your username" required>
+                                        </div>
+                                        <div class="group">
+                                            <label for="pass" class="label">Password</label>
+                                            <input id="loginpass" type="password" class="input" data-type="password" placeholder="Enter your password" required>
+                                        </div>
+                                        <div class="group">
+                                            <input type="submit" class="button" value="Sign In"> </div>
                                         <div class="hr"></div>
-                                        <div class="foot"> <a href="#">Forgot Password?</a> </div>
-                                      </div>
-                                      </form>
-                                      <div class="sign-up-form">
-                                          <form onsubmit="signup()">
-                                        <div class="group"> <label for="user" class="label">Username</label>
-                                        <input id="user" type="text" class="input" placeholder="Create your Username" required/> </div>
-                                        <div class="group"> <label for="pass" class="label">Password</label> 
-                                        <input id="pass" type="password" class="input" data-type="password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Create your password" required /> </div>
-                                        <div class="group"> <label for="pass" class="label">Repeat Password</label> 
-                                        <input id="repeatpass" type="password" class="input" data-type="password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" placeholder="Repeat your password" required /> </div>
-                                        <div class="group"> <label for="pass" class="label">Email Address</label>
-                                        <input id="email" type="email" class="input" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$" placeholder="Enter your email address" required/> </div>
-                                        <div class="group"> <input type="submit"  class="button" value="Sign Up"> </div>
-                                    </form>
-                                        <div id="nomatch"></div>
+                                        <div class="foot">
+                                            <a href="#">Forgot Password?</a>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="sign-up-form">
+                                    <form onsubmit="signup()">
+                                        <div class="group">
+                                            <label for="user" class="label">Username</label>
+                                            <input id="user" type="text" class="input" placeholder="Create your Username" required/> </div>
 
-                                        <div class="hr"></div>
-                                        <div class="foot"> <label for="tab-1">Already Member?</label> </div>
-                                      
+                                        <div class="group">
+                                            <label for="pass" class="label">Password</label>
+                                            <input id="pass" type="password" class="input" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" placeholder="Create your password"
+                                                required /> </div>
+                                        <div class="group">
+                                            <input type="checkbox" onclick="showPassword()">show password</div>
+                                        <div class="group">
+                                            <label for="pass" class="label">Repeat Password</label>
+
+                                            <input id="repeatpass" type="password" class="input" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$"
+                                                placeholder="Repeat your password" required /> </div>
+                                        <div class="group">
+                                            <input type="checkbox" onclick="showRepeatPassword()">show password</div>
+                                        <div class="group">
+                                            <label for="pass" class="label">Email Address</label>
+                                            <input id="email" type="email" class="input" placeholder="Enter your email address" required/> </div>
+                                        <div class="group">
+                                            <input type="submit" class="button" value="Sign Up"> </div>
+                                    </form>
+                                    <div id="nomatch"></div>
+                                    <div id="message">
+                                        <center>
+                                            <h3>Password must contain the following:</h3>
+                                            <p id="letter" class="invalid">A
+                                                <b>lowercase</b> letter</p>
+                                            <p id="capital" class="invalid">A
+                                                <b>capital (uppercase)</b> letter</p>
+                                            <p id="number" class="invalid">A
+                                                <b>number</b>
+                                            </p>
+                                            <p id="length" class="invalid">Minimum
+                                                <b>8 characters</b>
+                                            </p>
+                                            </br>
                                     </div>
                                 </div>
                             </div>
@@ -59,16 +88,67 @@
                     </div>
                 </div>
             </div>
-            </center>
+        </div>
+        </center>
 </body>
 <script>
-    
+
 </script>
 <script src="/Assets/js/login.js"></script>
-<script src="/service/UserManager.js">
-
-
+<script src="/service/UserManager.js"></script>
+<script>
+    var passwordMessage = document.getElementById("pass");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+    // When the user clicks on the password field, show the message box
+    passwordMessage.onfocus = function () {
+        document.getElementById("message").style.display = "block";
+    }
+    // When the user clicks outside of the password field, hide the message box
+    passwordMessage.onblur = function () {
+        document.getElementById("message").style.display = "none";
+    }
+    // When the user starts to type something inside the password field
+    passwordMessage.onkeyup = function () {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if (passwordMessage.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+        } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+        }
+        // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if (passwordMessage.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+        } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+        }
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if (passwordMessage.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+        } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+        }
+        // Validate length
+        if (passwordMessage.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+        } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+        }
+    }
 </script>
-<script src="/Assets/js/balance.js"></script>
+<script src="/Assets/dao/balance.js"></script>
+
 </html>
-    <head ></head>

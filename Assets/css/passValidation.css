@@ -1,0 +1,19 @@
+#message {
+    display: none;
+    color: #000;
+    position: relative;
+}
+
+#message p {
+    font-size: 18px;
+}
+
+.valid {
+    color: green;
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+
+.invalid {
+    color: red;
+}
